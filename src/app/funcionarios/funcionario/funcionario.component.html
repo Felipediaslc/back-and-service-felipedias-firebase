@@ -1,0 +1,23 @@
+<h1 class="display 4">Emp.DocFree Registro</h1>
+<form #form= "ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="id"#id="ngModel" [(ngModel)]="service.formData.id">
+  <div class="form-group">
+    <input name="NomeCompleto"#NomeCompleto="ngModel" [(ngModel)]="service.formData.NomeCompleto" class="form-conrol" placeholder="Nome Completo" style="width:450px "  required>
+    <div *ngIf="NomeCompleto.invalid && NomeCompleto.touched"class="validation-error">Este campo é obrigatório.</div>
+  </div>
+  
+  <div class="form-group">
+    <input name="Posicao"#Posicao="ngModel" [(ngModel)]="service.formData.Posicao" class="form-conrol" placeholder="Posição" style="width:450px">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input name="empCode"#empCode="ngModel" [(ngModel)]="service.formData.empCode" class="form-conrol" placeholder="Emp. code">
+    </div>
+    <div class="form-group col-md-6">
+      <input name="Telefone"#Telefone="ngModel" [(ngModel)]="service.formData.Telefone" class="form-conrol" placeholder="Telefone">
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">SUBMIT</button>
+  </div>
+</form>
